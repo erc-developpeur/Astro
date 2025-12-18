@@ -1,0 +1,149 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.hero-fond-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.img-degrade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-main-content {
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+    width: 40%;
+    color: white;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease;
+}
+
+.hero-meta {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    transition: opacity 0.5s ease;
+}
+
+.hero-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s ease;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 2;
+}
+
+.degarde-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.event {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.event::-webkit-scrollbar {
+    display: none;
+}
+
+.mylist-card {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.mylist-card:hover {
+    transform: scale(1.05);
+}
+
+.mylist-card.active {
+    border-color: #ff0000;
+}
+
+.mylist-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-fade {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero-fade.show {
+    opacity: 1;
+}
+
+/* Media queries pour la version desktop */
+@media (min-width: 968px) {
+    .hero-title {
+        font-size: 4em;
+    }
+
+    .hero-meta {
+        font-size: 1.3em;
+    }
+
+    .hero-description {
+        font-size: 1.2em;
+    }
+
+    .mylist-card {
+        width: 220px;
+        height: 130px;
+    }
+
+    .event {
+        padding: 30px;
+    }
+} 

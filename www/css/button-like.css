@@ -1,0 +1,453 @@
+:root{
+    --primary-blue: #0D0D0D;
+    --light-blue: #ecf0f1;
+    --dark-blue: #0D0D0D;
+    --text-color: #ecf0f1;
+    --background: linear-gradient(#2c3e50, #34495e);
+    --shadow: 0 5px 15px 0 rgba(52, 152, 219, 0.3);
+    --shadow-active: 0 5px 5px 0 rgba(52, 152, 219, 0.5);
+    --border-radius-main: 15px;
+    --border-radius-icon: 50px;
+
+
+
+
+
+    --one-coloc: #0D0D0D;
+    --two-coloc:#262626;
+    --tree-coloc:#595959;
+    --bar-coloc:#d4d4d4;
+    --four-coloc:#8C8C8C;
+    --five-color:#F2F2F2;
+    --box-shadows:#f2f2f24d;
+    --border-raduis: 15px;
+}
+
+.avis{
+  margin: 2rem;
+  margin-left: -40%;
+  display: inline-flex
+;
+}
+
+
+
+.like-dislike-container {
+  position: relative;
+  display: flex
+;
+  /* text-align: left; */
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+  color: var(--text-color);
+  /* opacity: 0.9; */
+  padding: 0.5rem;
+  font-weight: 600;
+  /* background: var(--background); */
+  max-width: max-content;
+  border-radius: var(--border-radius-main);
+  /* box-shadow: var(--shadow); */
+  transition: 0.2s ease all;
+  }
+
+  
+  .like-dislike-container .tool-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 0;
+    right: 0;
+    border-radius: var(--border-radius-main);
+  }
+  
+  .like-dislike-container .btn-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 0.8rem;
+    height: 0.8rem;
+    color: transparent;
+    font-size: 0;
+    cursor: pointer;
+    background-color: rgba(231, 76, 60, 0.8);
+    border: none;
+    border-radius: var(--border-radius-main);
+    transition: 0.2s ease all;
+  }
+  
+  
+  .like-dislike-container .text-content {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    line-height: 1.6;
+    cursor: default;
+  }
+  
+  .like-dislike-container .icons-box {
+    display: flex;
+  }
+  
+  .like-dislike-container .icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid var(--light-blue);
+    border-radius: var(--border-radius-icon);
+    transition: 0.2s ease all;
+  }
+  
+  .like-dislike-container .icons:hover {
+    opacity: 1;
+    color: var(--one-coloc);
+    border: none;
+    background-color: var(--light-blue);
+  }
+  
+  .like-dislike-container .icons:active {
+    opacity: 1;
+    box-shadow: var(--shadow-active);
+    background-color: var(--dark-blue);
+  }
+  
+  .like-dislike-container .icons .btn-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .like-dislike-container .like-text-content {
+    border-right: 0.1rem solid var(--four-coloc);
+    padding: 0 0.6rem 0 0.5rem;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+  }
+  
+  .like-dislike-container .dislike-text-content {
+    border-left: 0.1rem solid var(--four-coloc);
+    padding: 0 0.5rem 0 0.6rem;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+}
+  
+  .like-dislike-container .icons .svgs {
+    width: 1.3rem;
+    fill: var(--text-color);
+    box-sizing: content-box;
+    padding: 10px 10px;
+    transition: 0.2s ease all;
+    color: var(--one-coloc);
+  }
+  .like-dislike-container .icons:hover {
+    background-color: var(--five-color);
+    color: var(--one-coloc);
+}
+
+.like-dislike-container .icons:hover .svgs {
+    fill: var(--dark-blue);
+}
+  
+  
+  .like-dislike-container .icons .input-box {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .like-dislike-container .icons #icon-like-regular {
+    display: block;
+  }
+  
+  .like-dislike-container .icons #icon-like-solid {
+    display: none;
+  }
+  
+  .like-dislike-container .icons:hover :is(#icon-like-solid, #icon-like-regular) {
+    animation: rotate-icon-like 0.7s ease-in-out both;
+  }
+  
+  .like-dislike-container .icons #like-checkbox:checked ~ #icon-like-regular {
+    display: none;
+    animation: checked-icon-like 0.5s;
+  }
+  
+  .like-dislike-container .icons #like-checkbox:checked ~ #icon-like-solid {
+    display: block;
+    animation: checked-icon-like 0.5s;
+  }
+  
+  .like-dislike-container .icons #icon-dislike-regular {
+    display: block;
+    transform: rotate(180deg);
+  }
+  
+  .like-dislike-container .icons #icon-dislike-solid {
+    display: none;
+    transform: rotate(180deg);
+  }
+  
+  .like-dislike-container
+    .icons:hover
+    :is(#icon-dislike-solid, #icon-dislike-regular) {
+    animation: rotate-icon-dislike 0.7s ease-in-out both;
+    color: var(--one-coloc);
+  }
+  
+  .like-dislike-container
+    .icons
+    #dislike-checkbox:checked
+    ~ #icon-dislike-regular {
+    display: none;
+    animation: checked-icon-dislike 0.5s;
+  }
+  
+  .like-dislike-container .icons #dislike-checkbox:checked ~ #icon-dislike-solid {
+    display: block;
+    animation: checked-icon-dislike 0.5s;
+  }
+  
+  .like-dislike-container .icons .fireworks {
+    transform: scale(0.4);
+  }
+  
+  .like-dislike-container
+    .icons
+    #like-checkbox:checked
+    ~ .fireworks
+    > .checked-like-fx,
+  .like-dislike-container
+    .icons
+    #dislike-checkbox:checked
+    ~ .fireworks
+    > .checked-dislike-fx {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow:
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff,
+      0 0 #ffff;
+    animation:
+      1s fireworks-bang ease-out forwards,
+      1s fireworks-gravity ease-in forwards,
+      5s fireworks-position linear forwards;
+    animation-duration: 1.25s, 1.25s, 6.25s;
+  }
+  
+  .like-dislike-container
+    .icons
+    #like-checkbox:checked
+    ~ .fireworks
+    > .checked-like-fx {
+    right: 40px;
+  }
+  
+  .like-dislike-container
+    .icons
+    #dislike-checkbox:checked
+    ~ .fireworks
+    > .checked-dislike-fx {
+    left: 40px;
+  }
+  
+  @keyframes rotate-icon-like {
+    0%,
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes rotate-icon-dislike {
+    0%,
+    100% {
+      transform: rotate(180deg) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: rotate(183deg) translate3d(0, 0, 0);
+    }
+    50% {
+      transform: rotate(177deg) translate3d(0, 0, 0);
+    }
+    75% {
+      transform: rotate(181deg) translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes checked-icon-like {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2) rotate(-10deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  @keyframes checked-icon-dislike {
+    0% {
+      transform: scale(0) rotate(180deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2) rotate(170deg);
+    }
+    100% {
+      transform: scale(1) rotate(180deg);
+    }
+  }
+  
+  @keyframes fireworks-position {
+    0%,
+    19.9% {
+      margin-top: 10%;
+      margin-left: 40%;
+    }
+    20%,
+    39.9% {
+      margin-top: 40%;
+      margin-left: 30%;
+    }
+    40%,
+    59.9% {
+      margin-top: 20%;
+      margin-left: 70%;
+    }
+    60%,
+    79.9% {
+      margin-top: 30%;
+      margin-left: 20%;
+    }
+    80%,
+    99.9% {
+      margin-top: 30%;
+      margin-left: 80%;
+    }
+  }
+  
+  @keyframes fireworks-gravity {
+    to {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fireworks-bang {
+    to {
+      box-shadow:
+        114px -107px #fff,
+        212px -166px #fff,
+        197px -6px #fff,
+        179px -329px #fff,
+        -167px -262px #fff,
+        233px 65px #fff,
+        81px 42px #fff,
+        -13px 54px #fff,
+        -60px -183px #fff,
+        127px -259px #fff,
+        117px -122px #fff,
+        95px 20px #fff,
+        115px 1px #fff,
+        -160px -328px #fff,
+        69px -242px #fff,
+        -208px -230px #fff,
+        30px -15px #fff,
+        235px -15px #fff,
+        80px -232px #fff,
+        175px -173px #fff,
+        -187px -176px #fff,
+        4px 26px #fff,
+        227px -106px #fff,
+        119px 17px #fff,
+        -102px 4px #fff,
+        -16px -4px #fff,
+        -201px -310px #fff,
+        64px -181px #fff,
+        -234px -15px #fff,
+        -184px -263px #fff;
+    }
+  }
+  

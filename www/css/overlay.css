@@ -1,0 +1,192 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(3px);
+}
+
+.overlay-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-content .movie-info {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.overlay-content .movie-info h3 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+}
+
+.overlay-content .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.overlay-content .rating-value {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-content .stars {
+    color: #ffd700;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-content .actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.overlay-content .actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-content .play-btn {
+    background-color: #e50914;
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+    min-width: 120px;
+}
+
+.overlay-content .info-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    backdrop-filter: blur(5px);
+    min-width: 100px;
+}
+
+.overlay-content .like-btn, 
+.overlay-content .add-list-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.overlay-content .play-btn:hover {
+    background-color: #f40612;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+.overlay-content .info-btn:hover, 
+.overlay-content .like-btn:hover, 
+.overlay-content .add-list-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.overlay-content .like-btn i, 
+.overlay-content .add-list-btn i {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.overlay-content .like-btn:hover i, 
+.overlay-content .add-list-btn:hover i {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .overlay-content {
+        padding: 15px;
+    }
+
+    .overlay-content .movie-info h3 {
+        font-size: 1.2em;
+    }
+
+    .overlay-content .actions button {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+
+    .overlay-content .like-btn, 
+    .overlay-content .add-list-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .overlay-content .play-btn {
+        min-width: 100px;
+    }
+    
+    .overlay-content .info-btn {
+        min-width: 80px;
+    }
+}
+
+.tt-produit:hover .overlay {
+    opacity: 1;
+}
+
+.tt-produit:hover .overlay-content {
+    transform: translateY(0);
+} 

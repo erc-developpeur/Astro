@@ -1,0 +1,121 @@
+:root{
+    --one-coloc: #0D0D0D;
+    --two-coloc:#262626;
+    --tree-coloc:#595959;
+    --four-coloc:#8C8C8C;
+    --five-color:#F2F2F2;
+    --border-raduis: 15px;
+}
+
+
+
+
+/* Global styles */
+body {
+    background-color: var(--one-coloc);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the app */
+.app-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Card style */
+.card {
+    background: var(--two-coloc);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-raduis);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Text inside cards */
+.card h2, .card p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+/* Buttons */
+.button {
+    background: linear-gradient(145deg, var(--two-coloc) , var(--one-coloc));
+    border: none;
+    color: white;
+    padding: 10px var(--border-raduis);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(145deg, var(--one-coloc), var(--two-coloc) );
+}
+
+/* Toggle switch */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--four-coloc);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Chart and progress bar */
+.progress-bar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    height: 10px;
+    background: var(--four-coloc);
+    width: 75%; /* Adjust percentage dynamically */
+}
